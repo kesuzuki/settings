@@ -1,0 +1,36 @@
+# putty Ctrl+Right, Left
+bindkey "^[OC" next
+bindkey "^[OD" prev
+#bindkey "^[^[[C" next
+#bindkey "^[^[[D" prev
+
+# ステータスバー
+termcapinfo xterm "ks=\E[?1l\E:ku=\E[A:kd=\E[B:kl=\E[D:kr=\E[C:kh=\E[5~:kH=\E[F"
+hardstatus string "[screen %n: %t] %h"
+#hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w%< %h"
+hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %=%{gk}$USER@$HOSTNAME[$LANG] (%l) "
+#hardstatus alwayslastline "%{= Gk} %-Lw%40L>%{b kg} %n %t %{-}%+Lw%-040=%{b km} %l %{.b} %Y/%m/%d %C:%s %A "
+
+
+sorendition '+rb .G'
+
+#caption always '%?%F%{= bw}%:%{= wk}%?%2n%f%07=%t%='
+#caption always "%{= dd}%`"
+
+scrollback 10000
+
+# 高輝度色のテキストをボールドにもする。
+attrcolor i "+b"
+
+# 256色表示設定
+term xterm-256color
+
+# 起動メッセージ
+startup_message off
+
+# エラー時の端末画面の点滅
+#vbell off
+
+# 自動デタッチ
+autodetach on
+#escape ^Tt
